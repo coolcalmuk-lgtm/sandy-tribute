@@ -1,0 +1,321 @@
+/* --- Global Resets & Theme Variables --- */
+:root {
+    --bg-color: #faf7f2;       /* Soft, warm cream background */
+    --card-bg: #ffffff;        /* Crisp white for content frames */
+    --primary-text: #2c3e50;   /* Deep charcoal for excellent readability */
+    --secondary-text: #7f8c8d; /* Muted grey for dates and subtexts */
+    --accent-gold: #d4af37;    /* Warm memorial gold */
+    --accent-soft: #f3e9dc;    /* Soft beige borders/background accents */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+}
+
+/* --- Hero Banner Section --- */
+.hero {
+    position: relative;
+    background: url('sandy1-hero.jpg') no-repeat center center/cover; /* Replace with your hero cover photo */
+    background-color: #34495e; /* Fallback dark background color */
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Darkens the image background slightly so text pops */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.heart-icon {
+    font-size: 5.5rem;
+    display: inline-block;
+    margin-bottom: 10px;
+	
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.hero .dates {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+.hero .tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+/* --- Content Layout --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--primary-text);
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* --- Biography Section --- */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.story-text p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #3e5871;
+}
+
+.story-img-frame {
+    background-color: var(--card-bg);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--accent-soft);
+}
+
+.story-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+/* --- Quirks / Feature Blocks --- */
+.quirks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.quirk-card {
+    background-color: var(--card-bg);
+    padding: 30px 25px;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid var(--accent-gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.quirk-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.quirk-card p {
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+}
+
+/* --- Image Gallery Grid --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    background-color: var(--card-bg);
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+/* --- Custom Guestbook Layout --- */
+.guestbook-card {
+    background-color: var(--card-bg);
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid var(--accent-soft);
+}
+
+.guestbook-prompt {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+    margin-bottom: 25px;
+}
+
+.guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.guestbook-form input, 
+.guestbook-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcd6cd;
+    border-radius: 4px;
+    background-color: #fdfcfb;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.guestbook-form input:focus, 
+.guestbook-form textarea:focus {
+    border-color: var(--accent-gold);
+}
+
+.guestbook-form button {
+    background-color: var(--primary-text);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.guestbook-form button:hover {
+    background-color: #1a252f;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-text);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero { height: 55vh; }
+    .story-grid { grid-template-columns: 1fr; gap: 30px; }
+    .story-img-frame { max-width: 400px; margin: 0 auto; }
+    .container { padding: 40px 15px; }
+    .guestbook-card { padding: 25px; }
+}
+/* --- Lost and Found Layout --- */
+.story-card-full {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid var(--accent-soft);
+}
+.story-lead {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--accent-gold);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.story-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.timeline-block h3 {
+    font-size: 1.25rem;
+    color: var(--primary-text);
+    margin-bottom: 8px;
+}
+/* --- Final Farewell Distinct Look --- */
+.final-card {
+    border-left: 4px solid #95a5a6; /* A soft, elegant slate silver border */
+}
+/* --- Story Image Grid Adjustments --- */
+.reverse-layout {
+    direction: rtl; /* Sweeps the layout structure backwards to switch image/text sides */
+}
+.reverse-layout .story-text {
+    direction: ltr; /* Keeps text writing left-to-right normally inside the flipped box */
+}
+.final-border {
+    border-left: 4px solid #95a5a6;
+    padding-left: 20px;
+}
+@media (max-width: 768px) {
+    .reverse-layout { direction: ltr; } /* Keeps layout simple stacked on mobile screens */
+}
+
